@@ -1,6 +1,12 @@
-<h2>Log in</h2>
+<div class="jumbotron">
+<div class="container">
+    <div class="row">
+        <h1>ListAssist.</h1>
+        <h2>Making it <em>"painlist"</em> to shop.</h2>
 
+        </div>
 <div class=form-group>
+  <h2>Log in</h2>
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :email %><br />
@@ -29,8 +35,69 @@
     <%= f.submit "Log in" %>
   </div>
   </div>
+  </div>
+  
+
 <% end %>
 
 
 <%= render "devise/shared/links" %>
+
+</div>
+    
+  
+</div>
+
+      <div class="row">
+            <div class="col-md-4 portfolio-item">
+                <a href="/items/">
+                    <img class="img-responsive" src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f3/Whole_Foods_Market_logo.svg/1280px-Whole_Foods_Market_logo.svg.png" alt="">
+                </a>
+            </div>
+            <div class="col-md-4 portfolio-item">
+                <a href="/items/">
+                    <img class="img-responsive" src="http://jacksonville.com/sites/default/files/imagecache/premium_415_wide_scale/TraderJoe's.jpg" alt="">
+                </a>
+            
+            </div>
+            <div class="col-md-4 portfolio-item">
+                <a href="/items/">
+                    <img class="img-responsive" src="http://www.popai.com/Marianos-front-entrance-sig.jpg" alt="">
+                </a>
+                
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Projects Row -->
+        <div class="row">
+            <div class="col-md-4 portfolio-item">
+                <a href="/items/">
+                    <img class="img-responsive" src="http://3dprint.com/wp-content/uploads/2014/11/Target-Logo.png" alt="">
+                </a>
+            </div>
+            <div class="col-md-4 portfolio-item">
+                <a href="/items">
+                    <img class="img-responsive" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Costco_Wholesale.svg/2000px-Costco_Wholesale.svg.png" alt="">
+                </a>
+            </div>
+            <div class="col-md-4 portfolio-item">
+                <a href="/items">
+                    <img class="img-responsive" src="http://www.grocerycouponnetwork.com/community/wp-content/uploads/2012/10/jewel-300x133.png" alt="">
+                </a>
+            
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
 
