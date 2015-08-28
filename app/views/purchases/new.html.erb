@@ -1,0 +1,57 @@
+<!-- Validation failure messages --><!-- Validation failure messages -->
+<% if @purchase.errors.any? %>
+  <% @purchase.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Purchase</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_purchase" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+      <input name="user_id" type="hidden" value="<%= current_user.id %>">
+      
+
+      <!-- Label and input for purchased_on -->
+      <div class="form-group">
+        <label for="purchased_on" class="control-label">
+          Purchased on
+        </label>
+        <input type="text" id="purchased_on" name="purchased_on" placeholder="Purchased on" class="form-control" value="<%= @purchase.purchased_on %>">
+      </div>
+
+      <!-- Label and input for item_id -->
+      <div class="form-group">
+        <label for="item_id" class="control-label">
+          Item
+        </label>
+
+        <%= select_tag(:item_id, options_from_collection_for_select(Item.all, :id, :name, @item ), :class => "form-control") %>
+
+      </div>
+
+      <!-- Label and input for store_id -->
+      <div class="form-group">
+        <label for="store_id" class="control-label">
+          Store
+        </label>
+
+        <%= select_tag(:store_id, options_from_collection_for_select(Store.all, :id, :name, @store ), :class => "form-control") %>
+      </div>
+
+      <button class="btn btn-success">
+        Create Purchase
+      </button>
+      or
+      <a href="/purchases">Cancel</a>
+    </form>
+  </div>
+</div>
