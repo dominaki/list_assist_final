@@ -17,7 +17,7 @@ class ItemsController < ApplicationController
     @item.name = params[:name]
 
     if @item.save
-      redirect_to "/items", :notice => "Item created successfully."
+      redirect_to :back, :notice => "Item created successfully."
     else
       render 'new'
     end
