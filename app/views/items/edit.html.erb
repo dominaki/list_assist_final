@@ -17,14 +17,14 @@
     <form action="/update_item/<%= @item.id %>" method="post">
       <!-- Hidden input for authenticity token to protect from forgery -->
       <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+      <input name="user_id" type="hidden" value="<%= current_user.id %>">
+
 
       <!-- Label and input for user_id -->
       <div class="form-group">
-        <label for="user_id" class="control-label">
-          User
-        </label>
+      
 
-        <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @item.user_id %>">
+        <input type="hidden" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @item.user_id %>">
       </div>
 
       <!-- Label and input for name -->
@@ -33,14 +33,14 @@
           Name
         </label>
 
-        <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="<%= @item.name %>">
+       <%= select_tag(:item_id, options_from_collection_for_select(Item.all, :id, :name, @item ), :class => "form-control") %>
       </div>
 
       <button class="btn btn-warning">
         Update Item
       </button>
       or
-      <a href="/items/<%= @item.id %>">Cancel</a>
+      <a href="/items/">Cancel</a>
     </form>
   </div>
 </div>
