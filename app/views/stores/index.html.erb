@@ -1,0 +1,33 @@
+<div class="jumbotron">
+  <h1>ListAssist.</h1>
+  <h2>Making it <em>"painlist"</em> to shop.</h2>
+    </div>
+ 
+    <div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        
+      </tr>
+
+      <% @stores.each do |store| %>
+      <tr>
+    
+        <td><%= store.name %></td>
+        <td>
+
+          <a href="/items/" class="btn btn-primary">Items</a>
+          <a href="/stores/<%= store.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_store/<%= store.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+ <h1>
+
+    <a href="/stores/new" class="btn btn-lg btn-success">Add Your Favorite Stores</a>
+  </h1>
+
